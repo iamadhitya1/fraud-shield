@@ -10,6 +10,10 @@
 
 Built from a production Random Forest classifier for credit card fraud detection on imbalanced datasets. Handles the hard parts — class imbalance, balanced accuracy, probability calibration — so you don't have to.
 
+<div align="center">
+  <img src="./demo.svg" alt="fraud-shield demo" width="520"/>
+</div>
+
 ---
 
 ## Install
