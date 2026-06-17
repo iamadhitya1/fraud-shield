@@ -156,8 +156,12 @@ The included example targets the [Kaggle Credit Card Fraud Detection dataset](ht
 
 ---
 
+## Author
+
+**[M. Adhitya](https://iamadhitya.vercel.app)** — Founder of [Rewrite Labs](https://rewritelabs.vercel.app), final-year B.Tech Computer Engineering student at IITRAM Ahmedabad. Builds AI products and open source libraries.
+
 ## License
 
-MIT © 2025 [M Adhitya](https://github.com/iamadhitya1)
+MIT © 2025 [M. Adhitya](https://iamadhitya.vercel.app)
 
-Built at [Rewrite Labs](https://rewritelabs.vercel.app) — extracted from production ML research at IITRAM Ahmedabad.
+Built at [Rewrite Labs](https://rewritelabs.vercel.app) — extracted from ML research at IITRAM Ahmedabad.
