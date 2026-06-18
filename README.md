@@ -6,13 +6,36 @@
 ![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.0%2B-F7931E?logo=scikitlearn)
 
-> Train, save, and run fraud detection on transaction data. One class. Clean API.
+> Train, save, and run fraud detection on transaction data. **94% balanced accuracy on the Kaggle dataset.** One class. Clean API.
 
 Built from a production Random Forest classifier for credit card fraud detection on imbalanced datasets. Handles the hard parts — class imbalance, balanced accuracy, probability calibration — so you don't have to.
 
 <div align="center">
   <img src="./demo.svg" alt="fraud-shield demo" width="520"/>
 </div>
+
+---
+
+## When to use this
+
+Use `fraud-shield` when:
+- You need a **fraud detection classifier you can train and deploy in under 10 lines of Python**
+- Your dataset is **heavily imbalanced** (fraud cases are < 1% of transactions — raw accuracy is meaningless here)
+- You want **probability scores and confidence levels** per transaction, not just binary labels
+- You need **save/load support** so you train once and deploy the pickled model
+
+Not the right fit if you need real-time streaming fraud detection, rule-based engines, or graph-based fraud networks. `fraud-shield` is a supervised batch classifier built on Random Forest — best suited for tabular transaction data.
+
+---
+
+## Why not sklearn directly?
+
+You can absolutely use `sklearn.ensemble.RandomForestClassifier` directly. `fraud-shield` wraps it with the patterns that fraud data specifically requires:
+
+- **Balanced accuracy by default** — raw accuracy on fraud data is meaningless (a model that predicts every transaction as legitimate gets ~99.8% accuracy while catching zero fraud)
+- **SMOTE-style class weighting** — handles the imbalance automatically
+- **Confidence tiers** — `high / medium / low` based on probability thresholds, not just a 0/1 label
+- **One-liner train/save/load** — no boilerplate
 
 ---
 
@@ -158,10 +181,10 @@ The included example targets the [Kaggle Credit Card Fraud Detection dataset](ht
 
 ## Author
 
-**[M. Adhitya](https://iamadhitya.vercel.app)** — Founder of [Rewrite Labs](https://rewritelabs.vercel.app), final-year B.Tech Computer Engineering student at IITRAM Ahmedabad. Builds AI products and open source libraries.
+**[M. Adhitya](https://iamadhitya.vercel.app)** — Founder, [Rewrite Labs](https://rewritelabs.vercel.app)
 
 ## License
 
 MIT © 2025 [M. Adhitya](https://iamadhitya.vercel.app)
 
-Built at [Rewrite Labs](https://rewritelabs.vercel.app) — extracted from ML research at IITRAM Ahmedabad.
+Built at [Rewrite Labs](https://rewritelabs.vercel.app)
